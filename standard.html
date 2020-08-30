@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="fontawesome-free-5.14.0-web/css/all.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <h1>Rock | Paper | Scissors</h1>
+    </header>
+    <div class="back">
+    <i class="fas fa-backspace" onClick="history.back();"  ></i>
+    </div>
+
+    <div class="score">
+        <div>user: <span class="userScore"></span></div>
+        <div>computer: <span class="computerScore"></span>
+        </div>
+    </div>
+
+
+    <div class="winner">
+        <p> --- </p>
+    </div>
+
+    <div class="choices">
+
+        <div data-option="rock" class="rock choice">
+            <i class="far fa-hand-rock"></i>
+        </div>
+
+        <div data-option="paper" class="paper choice">
+            <i class="far fa-hand-paper"></i>
+        </div>
+
+        <div data-option="scissors" class="scissors choice">
+            <i class="far fa-hand-scissors"></i>
+        </div>
+
+    </div>
+
+    <div class="restart">
+        <button>Restart</button>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+

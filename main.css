@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #292c34;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background: white;
+    padding: 20px;
+
+}
+
+header>h1 {
+    color: #25272E;
+    text-align: center;
+    font-family: Asap, sans-serif;
+    text-transform: uppercase;
+}
+
+.score {
+    margin: 20px 0;
+    border: 3px solid white;
+    border-radius: 100%px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    max-width: 200px;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+.winner {
+    color: white;
+    font-family: arial;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.choices {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.choice {
+    border: 10px solid white;
+    border-radius: 25%;
+    display: inline-block;
+    margin: 30px;
+    padding: 30px;
+}
+
+i {
+    color: white;
+    font-size: 100px;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background-color: grey;
+    border-color: lightseagreen;
+}
+
+
+
+.restart {
+    text-align: center;
+
+}
+
+.restart button {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: #292c34;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.restart button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+button:focus {
+    outline: 0;
+}
+
+
+.back i {
+    font-size: 50px;
+    padding: 30px;
+    transition: .7s;
+}
+
+.back i:hover {
+    transform: rotate(360deg);
+    transition: .5s;
+    cursor: pointer;
+}
