@@ -11,14 +11,15 @@ body {
 }
 
 header {
-    padding: 90px;
+    padding: 70px;
 }
 
-header>h1 {
+header > h1 {
     color: white;
     text-align: center;
-    font-family: Asap, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    
 }
 
 .wraper div {
@@ -38,11 +39,6 @@ header>h1 {
     transition: .8s;
 }
 
-.wraper .hall {
-   line-height: 60px;
-   text-decoration: line-through;
-}
-
 .wraper div:hover {
     background-color: white;
     color: #292c34;
@@ -59,10 +55,9 @@ a {
     }
 
     .wraper div {
-        padding-top: 5px;
-        margin: 5px;
+        padding: 10px;
+        margin-top: 20px;
     }
 
-     }
+}
 
-     

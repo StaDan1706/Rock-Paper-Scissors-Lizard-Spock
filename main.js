@@ -8,7 +8,11 @@ const game = {
     computerChoice: "",
 }
 
+const winner = document.querySelector('.info');
+const aiSelection = document.querySelector('.aiSelection')
 const choice = [...document.querySelectorAll('.choice')];
+const userScore = document.querySelector('.userScore');
+const computerScore = document.querySelector('.computerScore');
 
 
 function optionSelected() {
@@ -17,14 +21,19 @@ function optionSelected() {
 }
 
 function computerChoiceFunction() {
+    if ( choice.length === 3) {
     const aiChoice = choice[Math.floor(Math.random() * 3)].dataset.option;
-    return aiChoice;
+    return aiChoice; 
+} else {
+    const aiChoice = choice[Math.floor(Math.random() * 5)].dataset.option;
+    return aiChoice; 
+}
 }
 
 function checkResult(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
         return 'draw'
-    } else if ((userChoice === "paper" && computerChoice === "rock") || (userChoice === "rock" && computerChoice === "scissors") || userChoice === "scissors" && computerChoice === "paper") {
+    } else if ((userChoice === "paper" && computerChoice === "rock") || (userChoice === "rock" && computerChoice === "scissors") || (userChoice === "scissors" && computerChoice === "paper") || (userChoice === "rock" && computerChoice === "lizard") || (userChoice === "lizard" && computerChoice === "spock") || (userChoice === "spock" && computerChoice === "scissors") || (userChoice === "scissors" && computerChoice === "lizard") || (userChoice === "spock" && computerChoice === "rock") || (userChoice === "lizard" && computerChoice === "paper") || (userChoice === "paper" && computerChoice === "spock")) {
         return 'win'
     } else {
         return 'loss'
@@ -32,17 +41,15 @@ function checkResult(userChoice, computerChoice) {
 }
 
 function publishResult(user, computer, result) {
-
-    document.querySelector('.computerScore').textContent = GameSummary.losses;
-
+    aiSelection.textContent = `Opponent chose: ${game.computerChoice}`;
     if (result === "win") {
-        document.querySelector('.userScore').textContent = ++GameSummary.wins;
-        document.querySelector('.winner p').textContent = "YOU WIN !";
+        userScore.textContent = ++GameSummary.wins;
+        winner.textContent = "YOU WIN !";
     } else if (result === "loss") {
-        document.querySelector('.computerScore').textContent = ++GameSummary.losses;
-        document.querySelector('.winner p').textContent = "YOU LOSE ...";
+        computerScore.textContent = ++GameSummary.losses;
+        winner.textContent = "YOU LOSE ...";
     } else {
-        document.querySelector('.winner p').textContent = "DRAW!";
+        winner.textContent = "DRAW!";
     }
 }
 
@@ -57,14 +64,12 @@ function startGame() {
 }
 
 
-
-
 choice.forEach(choice => choice.addEventListener('click', optionSelected))
 
 choice.forEach(choice => choice.addEventListener('click', startGame))
 
 document.querySelector('button').addEventListener('click', restart = () => {
-    document.querySelector('.computerScore').textContent = GameSummary.wins = "0";
-    document.querySelector('.userScore').textContent = GameSummary.losses = "0";
-    document.querySelector('.winner p').textContent = "---";
+    computerScore.textContent = GameSummary.wins = "0";
+    userScore.textContent = GameSummary.losses = "0";
+    winner.textContent = "---";
 })
